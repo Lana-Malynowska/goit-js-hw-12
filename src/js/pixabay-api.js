@@ -10,6 +10,9 @@ const instance = axios.create({
   },
 });
 
-export function getImages(searchName) {
-  return instance.get('/', { params: { q: searchName } }).then(res => res.data);
+export async function getImages(searchName, page, perPage) {
+  const response = await instance.get('/', {
+    params: { q: searchName, page: page, per_page: perPage },
+  });
+  return response.data;
 }

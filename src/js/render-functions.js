@@ -6,10 +6,9 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+const gallery = document.querySelector('.gallery');
 
 export function showGallery(images) {
-  const gallery = document.querySelector('.gallery');
-
   const galleryMarkup = images
     .map(
       ({
@@ -51,7 +50,11 @@ export function showGallery(images) {
     )
     .join('');
 
-  gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+  gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
   lightbox.refresh();
+}
+
+export function clearGallery() {
+  gallery.innerHTML = '';
 }

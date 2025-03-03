@@ -73,11 +73,24 @@ button:hover {
   background-color: #6c8cff;
 }
 
+.load-btn {
+  width: 125px;
+  margin-top: 32px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .wrapper {
   display: flex;
   gap: 8px;
   justify-content: center;
   margin-bottom: 32px;
+}
+
+.js-loader {
+  margin-bottom: 0;
 }
 
 .gallery {
@@ -181,4 +194,8 @@ button:hover {
   87% {
     box-shadow: 0.2em -0.2em 0 0 currentcolor;
   }
+}
+
+.iziToast-body {
+  font-family: 'Montserrat', sans-serif !important;
 }
